@@ -1,0 +1,42 @@
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    namespace Program6
+    {
+    internal class Program
+    {
+        static void Main()
+        {
+            // Пример карты: '1' — суша, '0' — вода
+            string[] map = new string[]
+            {
+            "11001",
+            "10000",
+            "00111",
+            "00010"
+            };
+
+            int landCount = CountLandCells(map);
+            Console.WriteLine($"Общее число клеток суши L = {landCount}");
+        }
+
+        static int CountLandCells(string[] map)
+        {
+            int count = 0;
+            foreach (var row in map)
+            {
+                foreach (char cell in row)
+                {
+                    if (cell == '1') // поменяй на нужный символ, если у тебя не '1'
+                    {
+                        count++;
+                    }
+                }
+            }
+            return count;
+        }
+    }
+    }
